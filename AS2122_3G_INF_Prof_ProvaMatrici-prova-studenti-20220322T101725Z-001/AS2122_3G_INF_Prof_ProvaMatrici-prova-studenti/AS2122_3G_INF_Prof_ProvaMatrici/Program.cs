@@ -107,7 +107,21 @@ namespace AS2122_3G_INF_Prof_ProvaMatrici
         /// <param name="max"></param>
         public static double CalcolaMinMaxMedio(int[,] mat, ref int min, ref int max)
         {
-            
+            {
+                double medio = 0;
+                min = 100;
+                for (int i = 0; i < mat.GetLength(0); i++)
+                {
+                    for (int m = 0; m < mat.GetLength(1); m++)
+                    {
+                        if (min > mat[i, m]) min = mat[i, m];
+                        if (max < mat[i, m]) max = mat[i, m];
+                        medio += mat[i, m];
+                    }
+                }
+                medio /= mat.Length;
+                return medio;
+            }
         }
     }
 }
